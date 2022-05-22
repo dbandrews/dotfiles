@@ -1,2 +1,2 @@
-ln -sv "~/dotfiles/.bash_profile" ~
-ln -sv "~/dotfiles/.bashrc" ~
+ln -sfv "~/dotfiles/.bash_profile" ~
+ln -sfv "~/dotfiles/.bashrc" ~
