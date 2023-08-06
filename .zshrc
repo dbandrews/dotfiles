@@ -137,5 +137,36 @@ prompt_virtualenv() {
   fi
 }
 
+
+prompt_time() {
+  echo -n "%{%F{grey}%}"
+  echo -n "\ue0b2"
+  echo -n "%{%K{grey}%}%{%F{white}%}"
+  echo -n " "
+  echo -n "$(date +'%Y-%m-%d %T %Z')"
+}
+
+## Main prompt
+build_prompt() {
+  RETVAL=$?
+  prompt_status
+  prompt_virtualenv
+  prompt_context
+  prompt_dir
+  prompt_git
+  prompt_bzr
+  prompt_hg
+  prompt_end
+}
+
+build_right_prompt() {
+  prompt_time
+}
+
+PROMPT='%{%f%b%k%}$(build_prompt) '
+RPROMPT='$(build_right_prompt)'
+
+
+
 source ~/.aliases
 
