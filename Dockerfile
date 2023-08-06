@@ -19,7 +19,7 @@ RUN apt-get update && \
     && apt-get clean
 
 RUN useradd -s /bin/zsh tester
-ADD . /home/tester/.dotfiles
+ADD . /home/tester/dotfiles
 RUN chown -R tester:tester /home/tester && \
     echo 'tester ALL=(ALL) NOPASSWD:ALL' > /etc/sudoers.d/tester && \
     chmod 0440 /etc/sudoers.d/tester
@@ -28,4 +28,4 @@ USER tester
 ENV HOME /home/tester
 ENV TMUX y
 
-WORKDIR /home/tester/.dotfiles
+WORKDIR /home/tester/dotfiles

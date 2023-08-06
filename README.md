@@ -13,8 +13,8 @@ For managing my dotfiles obviously
 
 To test in a clean OS:
 
-` docker build . -t dotfiles`
+`docker build . -t dotfiles`
 
-`docker run -it --entrypoint //bin/bash dotfiles`
+`docker run -rm -it --entrypoint //bin/bash dotfiles`
 
 *// for Windows Bash behavior*
