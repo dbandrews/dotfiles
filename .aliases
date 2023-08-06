@@ -1,0 +1,22 @@
+# Some common operations
+alias l='ls -lthAF --color'
+alias jl='jupyter lab'
+alias ca='conda activate'
+alias cda='conda deactivate'
+ 
+# Git helpers
+alias gl='git log --date short -10 --pretty=format:"%C(auto,yellow)%h %C(auto,blue)%ad%C(auto)%d %C(auto,reset)%s"'
+alias gt='git status'
+alias gm='git commit -m'
+alias gap='git add -p'
+# Use git inner workings to allow autocomplete of branches with an alias
+alias gco='git checkout'
+__git_complete gco _git_checkout
+ 
+# Move, remove, and copy show what was done and prompt before overwriting files.
+alias rm="rm -vI"
+alias mv="mv -vi"
+alias cp="cp -vi"
+alias mkdir="mkdir -vp"
+# Case insensitive grep by default and color matches
+alias grep='grep -i --color=auto'
