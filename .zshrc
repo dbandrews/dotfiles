@@ -145,35 +145,37 @@ prompt_virtualenv() {
   fi
 }
 
-
 prompt_time() {
-  echo -n "%{%F{grey}%}"
-  echo -n "\ue0b2"
-  echo -n "%{%K{grey}%}%{%F{white}%}"
-  echo -n " "
-  echo -n "$(date +'%Y-%m-%d %T %Z')"
+  local ntime=`date +"%Y-%m-%d %T %Z"`
+  prompt_segment white black "$ntime"
 }
 
 ## Main prompt
 build_prompt() {
   RETVAL=$?
   prompt_status
-  prompt_virtualenv
   prompt_context
+  prompt_time
   prompt_dir
+  prompt_virtualenv
   prompt_git
   prompt_bzr
   prompt_hg
   prompt_end
 }
 
-build_right_prompt() {
-  prompt_time
+prompt_end() {
+  if [[ -n $CURRENT_BG ]]; then
+    echo -n " %{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR"
+  else
+    echo -n "%{%k%}"
+  fi
+  echo -n "\n%{%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR%{%f%}"
+  CURRENT_BG=''
 }
 
-PROMPT='%{%f%b%k%}$(build_prompt) '
-RPROMPT='$(build_right_prompt)'
-
+build_right_prompt() {
+}
 
 # _________________aliases____________________
 source ~/.aliases
