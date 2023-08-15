@@ -20,3 +20,12 @@ alias cp='cp -vi'
 alias mkdir='mkdir -vp'
 # Case insensitive grep by default and color matches
 alias grep='grep -i --color=auto'
+
+
+# Conda
+alias ca='conda activate'
+alias cda='conda deactivate'
+alias cla='conda env list'
+function crm(){
+ conda remove -n $1 -y --all
+}
