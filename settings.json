@@ -80,7 +80,7 @@
             "debugExceptionWidget.background": "#29e3beaa",
             "tab.activeBackground": "#29e3beaa",
             "gitDecoration.untrackedResourceForeground": "#2a9e37",
-            "terminal.ansiMagenta": "#5d40ad",
+            "terminal.ansiMagenta": "#372860",
             "notebook.cellBorderColor": "#7cdac7aa",
             "notebook.cellEditorBackground": "#15202f"
         },
@@ -193,5 +193,4 @@
             ],
             "compounds": []
         },
-
     }
