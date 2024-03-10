@@ -1,3 +1,6 @@
 [push]
 	autoSetupRemote = true
 	default = upstream
+[user]
+	email = dustin.brown.andrews@gmail.com
+	name = Dustin Andrews
