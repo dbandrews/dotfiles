@@ -1,0 +1,196 @@
+    {
+        "github.copilot.advanced": {
+            "inlineSuggestCount": 5,
+            "listCount": 10,
+            "indentationMode": {
+                "python": false,
+                "javascript": false,
+                "javascriptreact": false,
+                "jsx": false,
+                "typescript": false,
+                "typescriptreact": false,
+                "go": false,
+                "ruby": false,
+                "*": true
+            },
+            "length": 700,
+            "stops": {
+                "*": [
+                    "\n\n\n"
+                ],
+                "python": [
+                    "\nclass ",
+                ]
+            }
+        },
+        "github.copilot.enable": {
+            "markdown": "true"
+        },
+        "workbench.colorTheme": "poimandres-storm",
+        "http.proxyStrictSSL": false,
+        "remote.autoForwardPortsSource": "output",
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "terminal.integrated.profiles.linux": {
+            "zsh": {
+                "path": "zsh",
+                "icon": "star",
+                "args": [
+                    "-l"
+                ]
+            },
+            "bash": {
+                "path": "bash",
+                "icon": "terminal-bash",
+                "args": [
+                    "-l"
+                ]
+            },
+        },
+        // Appearance
+        //-----edit syntax highlighting colors
+        "editor.tokenColorCustomizations": {
+            "textMateRules": [
+                {
+                    "scope": "meta.function-call.generic.python",
+                    "settings": {
+                        "foreground": "#DCDCAA"
+                    }
+                },
+                {
+                    "scope": "meta.member.access.python",
+                    "settings": {
+                        "foreground": "#29e3be"
+                    }
+                },
+                // {
+                //     "scope": "source.python",
+                //     "settings": {
+                //         "foreground": "#a7cbc4"
+                //     }
+                // }
+            ]
+        },
+        "workbench.colorCustomizations": {
+            "sideBar.border": "#29e3beaa",
+            "icon.foreground": "#29e3beaa",
+            "editorGroup.border": "#29e3beaa",
+            "terminal.border": "#29e3beaa",
+            "panel.border": "#29e3beaa",
+            "debugIcon.breakpointCurrentStackframeForeground": "#29e3beaa",
+            "debugExceptionWidget.background": "#29e3beaa",
+            "tab.activeBackground": "#29e3beaa",
+            "gitDecoration.untrackedResourceForeground": "#2a9e37",
+            "terminal.ansiMagenta": "#372860",
+            "notebook.cellBorderColor": "#7cdac7aa",
+            "notebook.cellEditorBackground": "#15202f"
+        },
+        "terminal.integrated.cursorBlinking": false,
+        "terminal.integrated.cursorStyle": "line",
+        "terminal.integrated.cursorWidth": 3,
+        "terminal.integrated.fontSize": 14,
+        "terminal.integrated.gpuAcceleration": "off",
+        "editor.fontFamily": "Ubuntu Mono derivative Powerline",
+        "terminal.integrated.fontFamily": "Ubuntu Mono derivative Powerline",
+        //Python env
+        "python.terminal.activateEnvInCurrentTerminal": true,
+        "python.terminal.activateEnvironment": true,
+        // Python formatting and linting
+        "[python]": {
+            "editor.formatOnSave": true,
+            "editor.codeActionsOnSave": {
+                "source.fixAll": "explicit",
+                "source.organizeImports": "explicit"
+            },
+            "editor.defaultFormatter": "charliermarsh.ruff",
+        },
+        "ruff.format.args": [
+            "--line-length=120"
+        ],
+        "notebook.formatOnSave.enabled": true,
+        "notebook.codeActionsOnSave": {
+            "notebook.source.fixAll": "explicit",
+            "notebook.source.organizeImports": "explicit"
+        },
+        "python.terminal.launchArgs": [
+            "-m",
+            "IPython",
+            "--no-autoindent",
+        ],
+        "python.languageServer": "Pylance",
+        // General Code Editor Settings
+        "autoDocstring.docstringFormat": "numpy", //"numpy", // Needs the autoDocstring extension!
+        "editor.formatOnSave": true,
+        "editor.quickSuggestionsDelay": 10,
+        "editor.acceptSuggestionOnEnter": "off",
+        "python.analysis.typeCheckingMode": "basic",
+        "debug.inlineValues": "off",
+        "files.eol": "\n",
+        // Testing
+        "python.testing.pytestEnabled": true,
+        "notebook.output.textLineLimit": 1000,
+        "launch": {
+            "version": "0.2.0",
+            "configurations": [
+                {
+                    "name": "Personal: Run Python Script",
+                    "type": "debugpy",
+                    "request": "launch",
+                    "program": "main.py",
+                    // "preLaunchTask": "Add CallQuality to Path",
+                    "args": [
+                        // "--with_history=True",
+                        // "ACQ_EN"
+                        "+pipeline=monthly_update"
+                    ],
+                    "console": "integratedTerminal",
+                    "justMyCode": true
+                },
+                {
+                    "name": "Personal: Debug All Code!",
+                    "type": "debugpy",
+                    "request": "launch",
+                    "program": "${file}",
+                    // "python": "${command:python.interpreterPath}", // Set through VS Code GUI at bottom of window, or specify here
+                    "cwd": "${workspaceFolder}",
+                    "console": "integratedTerminal",
+                    "justMyCode": false
+                },
+                {
+                    "name": "Personal: Debug Module Script with command line args",
+                    "type": "debugpy",
+                    "request": "launch",
+                    "cwd": "${workspaceFolder}",
+                    "console": "integratedTerminal",
+                    "module": "callquality_call_classification.evaluate",
+                    "args": [
+                        // "seed=3",
+                        // "run_from_mlflow=b6b978d6fe9c486881a3631c10c08a22"
+                    ],
+                    "justMyCode": false
+                },
+                // {
+                //     "name": "Python: Debug Tests",
+                //     "type": "python",
+                //     "request": "launch",
+                //     // "program": "${file}",
+                //     "module": "pytest",
+                //     "purpose": [
+                //         "debug-test"
+                //     ],
+                //     "console": "integratedTerminal",
+                //     "justMyCode": true,
+                //     "args": [
+                //         "${file}",
+                //         "--run_snowflake_integration"
+                //     ],
+                //     "env": {
+                //         "PYTEST_ADDOPTS": "--no-cov",
+                //         "SNOWFLAKE_SERVICE_ACCOUNT": "ACCOUNT_NAME_HERE",
+                //         "SNOWFLAKE_PRIVATE_KEY_PATH": "${workspaceFolder}/private_key.pem"
+                //     },
+                //     "envFile": "${workspaceFolder}/.env",
+                // }
+            ],
+            "compounds": []
+        },
+    }

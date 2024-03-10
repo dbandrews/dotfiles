@@ -2,5 +2,7 @@
 	autoSetupRemote = true
 	default = upstream
 [user]
-	email = dustin.brown.andrews@gmail.com
 	name = Dustin Andrews
+	email = dustin.brown.andrews@gmail.com
+[core]
+	excludesfile = /home/drumm/.gitignore_global

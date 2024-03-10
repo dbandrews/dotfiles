@@ -71,7 +71,14 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z jsontools dirhistory zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(
+  git
+  z
+  jsontools
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  conda-zsh-completion
+  )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -124,9 +131,9 @@ unset __conda_setup
 # _________________suggestion customization___________
 bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
-
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=6'
 # _________________ Prompt design ____________________
-# Display conda env in prompt 
+# Display conda env in prompt
 prompt_virtualenv() {
   local env='';
 
@@ -139,22 +146,22 @@ prompt_virtualenv() {
   fi
 
   if [[ -n $env ]]; then
-    color=cyan
+    color='#7CDAC7'
     prompt_segment $color $PRIMARY_FG
     print -Pn "($(basename $env))"
   fi
 }
 
 prompt_time() {
-  local ntime=`date +"%Y-%m-%d %T %Z"`
-  prompt_segment white black "$ntime"
+  local ntime=`date +"%m-%d %T"`
+  prompt_segment magenta white "$ntime"
 }
 
 ## Main prompt
 build_prompt() {
   RETVAL=$?
-  prompt_status
-  prompt_context
+#  prompt_status
+#  prompt_context
   prompt_time
   prompt_dir
   prompt_virtualenv

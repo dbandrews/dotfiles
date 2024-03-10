@@ -4,7 +4,7 @@ alias jl='jupyter lab'
 alias ca='conda activate'
 alias cda='conda deactivate'
 alias cla='conda env list'
- 
+
 # Git helpers
 alias gl='git log --date short -10 --pretty=format:"%C(auto,yellow)%h %C(auto,blue)%ad%C(auto)%d %C(auto,reset)%s"'
 alias gt='git status'
@@ -12,14 +12,24 @@ alias gm='git commit -m'
 alias gap='git add -p'
 # Use git inner workings to allow autocomplete of branches with an alias
 alias gco='git checkout'
- 
+
 # Move, remove, and copy show what was done and prompt before overwriting files.
-alias rm='rm -vI'
+# alias rm='rm -vI'
 alias mv='mv -vi'
 alias cp='cp -vi'
 alias mkdir='mkdir -vp'
 # Case insensitive grep by default and color matches
-alias grep='grep -i --color=auto'
+alias grep='grep -i'
+alias lsa="ls -la --color"
+alias cl="clear"
+
+
+# Others
+alias wnvi="watch -n0.1 nvidia-smi"
+alias jpysync="python -m jupytext --sync *.md"
+alias diffcol="diff --side-by-side --suppress-common-lines --strip-trailing-cr  --color=auto"
+alias rmaws="rm ~/.aws/credentials"
+alias mkaws="nano ~/.aws/credentials"
 
 
 # Conda
@@ -29,3 +39,28 @@ alias cla='conda env list'
 function crm(){
  conda remove -n $1 -y --all
 }
+function pretty_csv {
+    perl -pe 's/((?<=,)|(?<=^)),/ ,/g;' "$@" | column -t -s, | less  -F -S -X -K
+}
+
+function check_and_install {
+    local package_name=$1
+    local success_msg="$2 installed successfully."
+    local failure_msg="$2 installation failed."
+    echo "Checking if $package_name is installed..."
+    if ! command -v $package_name &> /dev/null
+    then
+        echo "$package_name is not installed. Installing now..."
+        sudo apt-get update
+        if sudo apt-get install $package_name -y
+        then
+            echo $success_msg
+        else
+            echo $failure_msg
+        fi
+    else
+        echo "$package_name is already installed."
+    fi
+}
+
+
