@@ -26,7 +26,7 @@
         "github.copilot.enable": {
             "markdown": "true"
         },
-        "workbench.colorTheme": "poimandres-storm",
+        "workbench.colorTheme": "poimandres",
         "http.proxyStrictSSL": false,
         "remote.autoForwardPortsSource": "output",
         "terminal.integrated.defaultProfile.linux": "zsh",
@@ -90,6 +90,7 @@
         "terminal.integrated.fontSize": 14,
         "terminal.integrated.gpuAcceleration": "off",
         "editor.fontFamily": "Ubuntu Mono derivative Powerline",
+        // "editor.fontFamily": "Consolas, 'Courier New', monospace",
         "terminal.integrated.fontFamily": "Ubuntu Mono derivative Powerline",
         //Python env
         "python.terminal.activateEnvInCurrentTerminal": true,
@@ -98,7 +99,7 @@
         "[python]": {
             "editor.formatOnSave": true,
             "editor.codeActionsOnSave": {
-                "source.fixAll": "explicit",
+                // "source.fixAll": "explicit",
                 "source.organizeImports": "explicit"
             },
             "editor.defaultFormatter": "charliermarsh.ruff",
@@ -193,4 +194,5 @@
             ],
             "compounds": []
         },
+        "editor.lineNumbers": "relative",
     }
