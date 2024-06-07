@@ -160,8 +160,8 @@ prompt_time() {
 ## Main prompt
 build_prompt() {
   RETVAL=$?
-#  prompt_status
-#  prompt_context
+  prompt_status
+  prompt_context
   prompt_time
   prompt_dir
   prompt_virtualenv
