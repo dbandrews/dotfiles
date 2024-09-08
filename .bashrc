@@ -1,6 +1,16 @@
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-eval "$('~/miniconda3/Scripts/conda.exe' 'shell.bash' 'hook')"
+__conda_setup="$('/home/drumm/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/drumm/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/drumm/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/drumm/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
 # <<< conda initialize <<<
 
 # Enable the subsequent settings only in interactive sessions
@@ -147,4 +157,5 @@ source "$OSH"/oh-my-bash.sh
 # Example aliases
 # alias bashconfig="mate ~/.bashrc"
 # alias ohmybash="mate ~/.oh-my-bash"
-source ~/.aliases
+source ~/.aliasesexport LD_LIBRARY_PATH="/usr/lib/wsl/lib/"
+export NUMBA_CUDA_DRIVER="/usr/lib/wsl/lib/libcuda.so.1"
