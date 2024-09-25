@@ -6,3 +6,4 @@
 	email = dustin.brown.andrews@gmail.com
 [core]
 	excludesfile = /home/drumm/.gitignore_global
+	editor = vim
