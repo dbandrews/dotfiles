@@ -6,6 +6,7 @@ ln -sfn ~/dotfiles/.zshrc ~/.zshrc
 ln -sfn ~/dotfiles/.aliases ~/.aliases
 ln -sfn ~/dotfiles/settings.json ~/.vscode-server/data/Machine/settings.json
 ln -sfn ~/dotfiles/settings.json ~/.vscode-server-insiders/data/Machine/settings.json
+ln -sfn ~/dotfiles/settings.json ~/.cursor-server/data/Machine/settings.json
 
 echo "Setting up Git"
 

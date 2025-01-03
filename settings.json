@@ -199,12 +199,6 @@
             "compounds": []
         },
         "editor.lineNumbers": "relative",
-        "github.copilot.chat.experimental.inlineChatCompletionTrigger.enabled": true,
-        "github.copilot.chat.experimental.codeGeneration.instructions": [
-            {
-                "file": ".copilotrules",
-            }
-        ],
         "vim.easymotion": true,
         "vim.incsearch": true,
         "vim.useSystemClipboard": true,
@@ -253,7 +247,8 @@
         "vim.leader": "<space>",
         "vim.handleKeys": {
             "<C-a>": false,
-            "<C-f>": false
+            "<C-f>": false,
+	    "<C-p>": false
         },
         "extensions.experimental.affinity": {
             "vscodevim.vim": 1

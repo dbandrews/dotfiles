@@ -36,6 +36,11 @@ alias mkaws="nano ~/.aws/credentials"
 alias ca='conda activate'
 alias cda='conda deactivate'
 alias cla='conda env list'
+
+
+alias uvpi="uv pip install"
+
+
 function crm(){
  conda remove -n $1 -y --all
 }
