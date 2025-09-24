@@ -26,4 +26,4 @@ git config --global user.name "${name:-$defaultName}"
 git config --global user.email "${email:-$defaultEmail}"
 git config --global core.excludesfile ~/.gitignore_global
 
-conda config --set changeps1 False
+#conda config --set changeps1 False
