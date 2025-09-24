@@ -77,7 +77,6 @@ plugins=(
   jsontools
   zsh-autosuggestions
   zsh-syntax-highlighting
-  conda-zsh-completion
   )
 
 source $ZSH/oh-my-zsh.sh
@@ -132,64 +131,18 @@ unset __conda_setup
 bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=6'
-# _________________ Prompt design ____________________
-# Display conda env in prompt
-prompt_virtualenv() {
-  local env='';
 
-  # if "$CONDA_DEFAULT_ENV" variable exists,
-  # then you are using conda to manage python virtual env
-  if [[ -n "$CONDA_DEFAULT_ENV" ]]; then
-    env="$CONDA_DEFAULT_ENV"
-  elif [[ -n "$VIRTUAL_ENV" ]]; then
-    env="$VIRTUAL_ENV"
-  fi
-
-  if [[ -n $env ]]; then
-    color='#7CDAC7'
-    prompt_segment $color $PRIMARY_FG
-    print -Pn "($(basename $env))"
-  fi
-}
-
-prompt_time() {
-  local ntime=`date +"%m-%d %T"`
-  prompt_segment magenta white "$ntime"
-}
-
-## Main prompt
-build_prompt() {
-  RETVAL=$?
-  prompt_status
-  prompt_context
-  prompt_time
-  prompt_dir
-  prompt_virtualenv
-  prompt_git
-  prompt_bzr
-  prompt_hg
-  prompt_end
-}
-
-prompt_end() {
-  if [[ -n $CURRENT_BG ]]; then
-    echo -n " %{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR"
-  else
-    echo -n "%{%k%}"
-  fi
-  echo -n "\n%{%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR%{%f%}"
-  CURRENT_BG=''
-}
-
-build_right_prompt() {
-}
 
 # _________________aliases____________________
 source ~/.aliases
 
+# _________________path additions_____________
 export LD_LIBRARY_PATH="/usr/lib/wsl/lib/"
 export NUMBA_CUDA_DRIVER="/usr/lib/wsl/lib/libcuda.so.1"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+eval "$(starship init zsh)"
+

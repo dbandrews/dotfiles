@@ -7,3 +7,5 @@
 [core]
 	excludesfile = /home/drumm/.gitignore_global
 	editor = vim
+[credential]
+	helper = store

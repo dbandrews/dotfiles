@@ -22,12 +22,11 @@ esac
 # Path to your oh-my-bash installation.
 export OSH="$HOME/.oh-my-bash"
 export PYTHONUTF8=1
-export POWERLINE_LEFT_PROMPT="user_info python_venv cwd scm"
-export POWERLINE_RIGHT_PROMPT="clock"
+
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-bash is loaded.
-OSH_THEME="powerline-multiline"
+
 
 # Uncomment the following line to use case-sensitive completion.
 # OMB_CASE_SENSITIVE="true"
@@ -158,4 +157,5 @@ source "$OSH"/oh-my-bash.sh
 # alias bashconfig="mate ~/.bashrc"
 # alias ohmybash="mate ~/.oh-my-bash"
 source ~/.aliasesexport LD_LIBRARY_PATH="/usr/lib/wsl/lib/"
-export NUMBA_CUDA_DRIVER="/usr/lib/wsl/lib/libcuda.so.1"
+export NUMBA_CUDA_DRIVER="/usr/lib/wsl/lib/libcuda.so.1" 
+eval "$(starship init bash)"

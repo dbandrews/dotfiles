@@ -1,3 +1,8 @@
+#!/bin/bash
+
+source ./install_zsh.sh
+source ./install_starship.sh
+
 ln -sfn ~/dotfiles/.bash_profile ~/.bash_profile
 ln -sfn ~/dotfiles/.bashrc ~/.bashrc
 ln -sfn ~/dotfiles/.gitconfig ~/.gitconfig
@@ -7,6 +12,7 @@ ln -sfn ~/dotfiles/.aliases ~/.aliases
 ln -sfn ~/dotfiles/settings.json ~/.vscode-server/data/Machine/settings.json
 ln -sfn ~/dotfiles/settings.json ~/.vscode-server-insiders/data/Machine/settings.json
 ln -sfn ~/dotfiles/settings.json ~/.cursor-server/data/Machine/settings.json
+ln -sfn ~/dotfiles/starship.toml ~/.config/starship.toml
 
 echo "Setting up Git"
 
