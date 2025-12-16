@@ -156,6 +156,8 @@ source "$OSH"/oh-my-bash.sh
 # Example aliases
 # alias bashconfig="mate ~/.bashrc"
 # alias ohmybash="mate ~/.oh-my-bash"
-source ~/.aliasesexport LD_LIBRARY_PATH="/usr/lib/wsl/lib/"
+source ~/.aliases
+export LD_LIBRARY_PATH="/usr/lib/wsl/lib/"
 export NUMBA_CUDA_DRIVER="/usr/lib/wsl/lib/libcuda.so.1" 
 eval "$(starship init bash)"
+export PATH="$HOME/.local/bin:$PATH"
